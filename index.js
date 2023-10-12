@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchForm = document.getElementById('search-form');
     const dataDetails = document.getElementById('data-details');
 
+    // comment section elements
+    const commentForm = document.getElementById(`comment-form`);
+    const CommentInput = document.getElementById(`comment-input`);
+    const commentsList = document.getElementById(`comments-list`)
+
     // Event listener for the refresh button
     refreshButton.addEventListener('click', () => {
         fetchData(url);
@@ -23,6 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
         const searchTerm = searchInput.value.toLowerCase();
         filterData(searchTerm);
+    });
+
+    // Enent listener for submitting comments
+    commentForm.addEventListener(`submit`, (event) => {
+        event.preventDefault();
+        const commentText = commentInput.value.trim();
+
+        if (commentText) {
+            // Creating a new comment item
+            const commentItem = document.createElement(`li`);
+            commentItem.textContent = commentText;
+            commentsList.appendChild(commentItem);
+
+            // clearing comment input
+            commentInput.value = ``;
+            }
     });
 
     // Function to fetch and display the data
