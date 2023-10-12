@@ -2,15 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // getting the elemets by their ID
     const url = 'https://services2.arcgis.com/5I7u4SJE1vUr79JC/arcgis/rest/services/UniversityChapters_Public/FeatureServer/0/query?where=1%3D1&outFields=City,State,MEVR_RD,University_Chapter&outSR=4326&f=json';
-    const dataDiv = document.getElementById('data-list');
+    const dataList = document.getElementById('data-list');
     const listElement = document.getElementById('list');
     const refreshButton = document.getElementById('refresh-button');
     const searchInput = document.getElementById('search-input');
     const searchForm = document.getElementById('search-form');
     const dataDetails = document.getElementById('data-details');
     const commentForm = document.getElementById(`comment-form`);
-    const CommentInput = document.getElementById(`comment-input`);
-    const commentsList = document.getElementById(`comments-list`)
+    const commentInput = document.getElementById(`comment-input`);
+    const commentsList = document.getElementById(`comments-list`);
+    const city =document.getElementById('city');
+    const state = document.getElementById('state');
+    const director= document.getElementById('director');
+    const chapter = document.getElementById('chapter');
 
     // Event listener for the refresh button
     refreshButton.addEventListener('click', () => {
@@ -33,14 +37,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Enent listener for submitting comments
     commentForm.addEventListener(`submit`, (event) => {
         event.preventDefault();
-        const commentText = commentInput.value.trim();
+        const searchTerm = searchInput.value.toLowerCase();
+        filterData(searchterm);
+    });
 
+    // Event listener to submit comments
+    commentForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const commenttext = commentinput.value.trim();
+        // creating a new comment item
         if (commentText) {
-            // Creating a new comment item
-            const commentItem = document.createElement(`li`);
-            commentItem.textContent = commentText;
+            const commentItem = document.createElement('li');
+            commentItem.textComment = commentText;
             commentsList.appendChild(commentItem);
-
+        
+    
             // clearing comment input
             commentInput.value = ``;
             }
@@ -79,7 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Display data details
     function displayDetails(attributes) {
-        dataDetails.innerHTML = JSON.stringify(attributes, null, 2);
+        city.textContent = attributes.City;
+        state.textContent = attributes.State;
+        director.textContent= attributes.MERV_RD;
+        chapter.textContent =attributes.University_Chapter;
+        // dataDetails.innerHTML = JSON.stringify(attributes, null, 2);
     }
 
     // Filter data based on search term
@@ -95,6 +110,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // if (universityData) {
+    //     const { city, State, MERV_RD, University_Chapter} = universityData;
+    //     displayData.innerHTML = `
+    //     <h2>${University_Chapter}</h2>
+    //     <p>City: ${City}</p>
+    //     <p>State: ${State}</p>
+    //     <p>Regional Director: ${MERV_RD}</p>
+    //     `;
+    // } else {
+    //     console.error("University data not found.")
+    // }
 
     // Initial data fetch whenever the page loads
     fetchData(url);
