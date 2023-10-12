@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const url = 'https://services2.arcgis.com/5I7u4SJE1vUr79JC/arcgis/rest/services/UniversityChapters_Public/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json';
+    const url = 'https://services2.arcgis.com/5I7u4SJE1vUr79JC/arcgis/rest/services/UniversityChapters_Public/FeatureServer/0/query?where=1%3D1&outFields=City,State,MEVR_RD,University_Chapter&outSR=4326&f=json';
     const dataDiv = document.getElementById('data-list');
     const listElement = document.getElementById('list');
     const refreshButton = document.getElementById('refresh-button');
