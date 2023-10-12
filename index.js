@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    // getting the elemets by their ID
     const url = 'https://services2.arcgis.com/5I7u4SJE1vUr79JC/arcgis/rest/services/UniversityChapters_Public/FeatureServer/0/query?where=1%3D1&outFields=City,State,MEVR_RD,University_Chapter&outSR=4326&f=json';
     const dataDiv = document.getElementById('data-list');
     const listElement = document.getElementById('list');
@@ -6,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search-input');
     const searchForm = document.getElementById('search-form');
     const dataDetails = document.getElementById('data-details');
-
-    // comment section elements
     const commentForm = document.getElementById(`comment-form`);
     const CommentInput = document.getElementById(`comment-input`);
     const commentsList = document.getElementById(`comments-list`)
@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Fetch error:', error);
             });
     }
+
 
     // Display data as a list
     function displayList(features) {
