@@ -38,9 +38,16 @@ button:hover{
 
 h2 {
     text-align: center;
-    color: azure;
+    color: thistle;
     font-style: italic;
 
+}
+
+table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightgreen;
 }
 
 footer {

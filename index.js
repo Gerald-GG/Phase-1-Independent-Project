@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const commentsList = document.getElementById(`comments-list`);
     const city =document.getElementById('city');
     const state = document.getElementById('state');
-    const director= document.getElementById('director');
+    const directorTd= document.getElementById('director');
     const chapter = document.getElementById('chapter');
 
     // Event listener for the refresh button
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayDetails(attributes) {
         city.textContent = attributes.City;
         state.textContent = attributes.State;
-        director.textContent= attributes.MERV_RD;
+        directorTd.textContent= attributes.MEVR_RD;
         chapter.textContent =attributes.University_Chapter;
         // dataDetails.innerHTML = JSON.stringify(attributes, null, 2);
     }
@@ -110,18 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // if (universityData) {
-    //     const { city, State, MERV_RD, University_Chapter} = universityData;
-    //     displayData.innerHTML = `
-    //     <h2>${University_Chapter}</h2>
-    //     <p>City: ${City}</p>
-    //     <p>State: ${State}</p>
-    //     <p>Regional Director: ${MERV_RD}</p>
-    //     `;
-    // } else {
-    //     console.error("University data not found.")
-    // }
 
     // Initial data fetch whenever the page loads
     fetchData(url);
