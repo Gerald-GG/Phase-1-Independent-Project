@@ -1,5 +1,9 @@
 body { 
-    background-color: lightslategray;
+    /* background-color: lightslategray; */
+    background-image: url(Graduation-Day.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: Verdana, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
@@ -30,4 +34,17 @@ button:hover{
 #refresh-button {
     display: block;
     margin: 0;
+}
+
+h2 {
+    text-align: center;
+    color: azure;
+    font-style: italic;
+
+}
+
+footer {
+    text-align: center;
+    color: whitesmoke;
+    font-style: italic;
 }
