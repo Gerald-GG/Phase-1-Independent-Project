@@ -1,8 +1,23 @@
 body { 
     background-color: lightslategray;
+    font-family: Verdana, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
     text-align: center;
-    
+    color: #d8d2d2;
+}
+
+button {
+    background-color: aqua;
+    color: blue;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+button:hover{
+    background-color: blueviolet;
 }
