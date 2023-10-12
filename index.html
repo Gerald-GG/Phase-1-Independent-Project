@@ -1,19 +1,57 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Independent Project</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>DU University Chapters</h1>
-        <button id="refresh-button">Refresh Data</button>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independent Project</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>DU University Chapter</h1>
 
-        <form id="search-form">
-            <lable for="serch-input">Search</lable><br>
-            <input type="text" id="search-input" placeholder="Enter search term">
-            <input type="submit" value="Search"><br>
+    <form id="search-form">
+        <input type="text" id="search-input" placeholder="Search..." />
+        <button type="submit">Search</button>
+    </form>
+    <br>
+    <button id="refresh-button">Refresh Data</button><br><br>
+    
+    <!-- <table id="data-table">
+        <thead> 
+            <tr>
+                <th>Object ID</th>
+                <th>University Chapter</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Chapter ID</th>
+                <th>Regional Director</th>
+            </tr>
+        </thead> 
+        <tbody></tbody>
+    </table> -->
+
+    <!-- div element for data display -->
+    <div id="data-list">
+        <ul id="list"></ul>
+    </div>
+
+    <!-- div to dislay details -->
+    <div id="data-details"></div>
+
+    <!-- The comment section -->
+    <div id="comment-section">
+        <h2>Comment</h2>
+        <form id="comment-form">
+            <input type="text" id="comment-input" placeholder="Add your Comment..." />
+            <button type="submit">Add Comment</button>
         </form>
-        <div id="data"></div>
-        <script src="index.js"></script>
-    </body>
+
+        <!-- the coments will be displayed here -->
+        <ul id="comments-list">
+
+        </ul>
+    </div>
+
+    <script src="./index.js"></script> 
+</body>
 </html>
