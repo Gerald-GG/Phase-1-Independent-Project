@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event listener for the refresh button
     refreshButton.addEventListener('click', () => {
-        fetchData(url);
+        location.reload();
     });
 
     // Event listener for Search input

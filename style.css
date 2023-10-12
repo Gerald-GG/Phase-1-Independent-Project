@@ -21,3 +21,13 @@ button {
 button:hover{
     background-color: blueviolet;
 }
+
+#search-form, #comment-form {
+    text-align: center;
+    margin: 0;
+}
+
+#refresh-button {
+    display: block;
+    margin: 0;
+}
