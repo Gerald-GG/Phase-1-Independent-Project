@@ -90,11 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Display data details
     function displayDetails(attributes) {
-        city.textContent = attributes.City;
-        state.textContent = attributes.State;
-        directorTd.textContent= attributes.MEVR_RD;
-        chapter.textContent =attributes.University_Chapter;
-        // dataDetails.innerHTML = JSON.stringify(attributes, null, 2);
+        city.textContent = `City: ${attributes.City}`;
+        state.textContent = `State: ${attributes.State}`;
+        directorTd.textContent= `Regional Director: ${attributes.MEVR_RD}`;
+        chapter.textContent =`University Chapter: ${attributes.University_Chapter}`;
     }
 
     // Filter data based on search term
